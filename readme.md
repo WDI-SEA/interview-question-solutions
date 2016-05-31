@@ -443,35 +443,116 @@ attributes for each model, a 1:M association, and a M:M association.
 
 ## Ruby/Rails
 * What are ruby gems?
+
+
+
 * What is the difference between a symbol and a string?
+
+
+
 * What is the difference between a class method and an instance method?
+
+
+
 * What is the difference between local variables, instance variables, and class variables?
+
+
+
 * What is a range?
+
+
+
 * In ruby, what does attr_accessor do?  
+
+
+
 * What is the purpose of environment files under the config folder in Rails? (development, test, production)
+
+
+
 * What is the purpose of the application.rb file in Rails?
+
+
+
 * How can you define a constant?
+
+
+
 * What is the purpose of `yield`?
+
+
+
 * How do you store API keys when creating an app?
+
+
+
 * How do I send parameters through a url?
+
+
+
 * Explain MVC
+
+
+
 * What is a `before_action`? When would you use it?
+
+
+
 * What do controllers do in rails?
+
+
+
 * What is RESTful routing?
+
+
+
 * What is a polymorphic association?
+
+
+
 * What are params?
+
+
+
 * How do I make a migration to add a column in Rails?
+
+
+
 * What is CSRF? How does Rails protect an app against this?
+
+
+
 * What's the difference between `User.find_by_id(1)` and `User.find(1)`?
+
+
+
 * What's are classes in Ruby? What are modules? And what's the difference?
+
+
+
 
 ## Testing Questions
 
 * What are some advantages/disadvantages to testing your code?
+
+
+
 * What tools would you use to test your code's functionality?
+
+
+
 * What is the difference between a unit test and a functional/integration test?
+
+
+
 * What is the purpose of a code style linting tool?
+
+
+
 * What is End-to-end (E2E) testing? How can it be implemented in frameworks like Angular and Rails?
+
+
+
 
 ## Coding Questions:
 
