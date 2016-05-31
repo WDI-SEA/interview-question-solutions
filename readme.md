@@ -2,24 +2,65 @@
 
 (Partially from https://github.com/h5bp/Front-end-Developer-Interview-Questions)
 
-Go through all of the following questions and think about how you would respond to each. You should be able to answer many of the questions from memory, but you may have to research a few of them.
+Go through all of the following questions and think about how you would respond to
+each. You should be able to answer many of the questions from memory, but you may
+have to research a few of them.
 
-**Copy this md file to your homework folder and add a short answer under each item.** You should try to be as concise as possible, and list any handy resources you used to answer the question. This will be useful for studying for interviews after class.
+**Copy this md file to your homework folder and add a short answer under each item.**
+You should try to be as concise as possible, and list any handy resources you used
+to answer the question. This will be useful for studying for interviews after class.
 
 ## General Questions
 
 * What did you learn yesterday/this week?
+
+
+
 * What excites or interests you about coding?
+
+
+
 * What is a recent technical challenge you experienced and how did you solve it?
-* What UI, Security, Performance, SEO, Maintainability or Technology considerations do you make while building a web application or site?
+
+
+
+* What UI, Security, Performance, SEO, Maintainability or Technology considerations
+do you make while building a web application or site?
+
+
+
 * Talk about your preferred development environment.
+
+
+
 * Which version control systems are you familiar with?
+
+
+
 * Can you describe your workflow when you create a web page?
+
+
+
 * If you have 5 different stylesheets, how would you best integrate them into the site?
+
+
+
 * Can you describe the difference between progressive enhancement and graceful degradation?
+
+
+
 * Describe how you would create a simple slideshow page, without any frameworks (HTML/CSS/JS only).
+
+
+
 * If you could master one technology this year, what would it be?
+
+
+
 * Explain the importance of standards and standards bodies.
+
+
+
 
 ## HTML Questions
 
@@ -44,7 +85,9 @@ can only store strings. Unlike localStorage and sessionStorage
 cookies are actually sent to the server.
 
 
-* Why is it generally a good idea to position CSS `<link>`s between `<head></head>` and JS `<script>`s just before `</body>`? Do you know any exceptions?
+* Why is it generally a good idea to position CSS `<link>`s between `<head></head>`
+and JS `<script>`s just before `</body>`? Do you know any exceptions?
+
 This has to do the order things load in.
 CSS styles are loaded before elements appear and are displayed
 on the page. We put Javascript files at the end of the page so
@@ -395,7 +438,8 @@ include the `length` property and cause problems.
 
 ## Database Questions
 
-* Design a database schema for Facebook, with at least 4 models, a complete set of attributes for each model, a 1:M association, and a M:M association.
+* Design a database schema for Facebook, with at least 4 models, a complete set of
+attributes for each model, a 1:M association, and a M:M association.
 
 ## Ruby/Rails
 * What are ruby gems?
@@ -483,7 +527,19 @@ console.log('three');
 ## Fun Questions:
 
 * What's a cool project that you've recently worked on?
+
+
+
 * What are some things you like about the developer tools you use?
+
+
+
 * Do you have any pet projects? What kind?
+
+
+
 * How do you like your coffee?
+
+
+
 
