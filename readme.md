@@ -18,7 +18,13 @@ to answer the question. This will be useful for studying for interviews after cl
 
 * What excites or interests you about coding?
 
-
+  Having the ablity to create new things. 
+  You can do a lot of stuff.
+  The Eureka moment when you finally solve something
+  There's lots of little puzzles and problem solving.
+  You can turn your ideas into life
+  It allows you to explore ideas
+  There's lots of things to play with (images, movies, sound, text, numbers!!)
 
 * What is a recent technical challenge you experienced and how did you solve it?
 
@@ -39,7 +45,19 @@ do you make while building a web application or site?
 
 * Can you describe your workflow when you create a web page?
 
+  First: plan everything out first
+  make sure you understand the scope
+  make sure you're got the proper tools and resources before you start!
+  if you don't have plan then you're going to do things you don't need to do
 
+  Write a simple HTML page (you need that)
+  Add some minimal styling to make sure CSS works
+  Then adding some JavaScript functionality (make sure clicking works, scripts are set up)
+
+  getting a simple server running
+  testing the communication route between the app and the server
+    - make sure I can receive data from the server
+    - make sure I can send data to the server
 
 * If you have 5 different stylesheets, how would you best integrate them into the site?
 
@@ -51,7 +69,14 @@ do you make while building a web application or site?
 
 * Describe how you would create a simple slideshow page, without any frameworks (HTML/CSS/JS only).
 
+  use CSS animations for transitions using opacity to show and hide elements
+  keep an array with all of the image URLs
 
+  attach a click handler to the image so users can click on it and go to the next one
+  also, we can set up an interval with JavaScript to automatically transition through the pictures
+
+  make some divs with "< prev" and "next >" text
+  attach click handlers to those divs to go backwards and forwards in the slideshow
 
 * If you could master one technology this year, what would it be?
 
@@ -444,27 +469,62 @@ attributes for each model, a 1:M association, and a M:M association.
 ## Ruby/Rails
 * What are ruby gems?
 
+  It's a module you add in that can be used for additional functionality
+  for example, you can have a gem that provides a library with functions for OAuth
 
+  SASS is a great gem that allows us to preprocess our CSS
+  there's tons of auth gems
+
+  there's a great voting gem (acts-as-voteable)
+
+  CarrierWave - uploads files, uploaded Resumes
 
 * What is the difference between a symbol and a string?
 
+  We use symbols in hash maps
+  symbols all reference one single value
+  there may be many instances of strings
 
+  Ruby created symbols to save some space in memory when using hash maps
+  Symbols are simpler, they don't have as many methods and other data attached to them as strings
+  Strings take up more memory than symbols
+
+  :dogcat
+
+  s1 = "dogcat"
+  s2 = "dogcat"
 
 * What is the difference between a class method and an instance method?
 
-
+  A class method exists once for all instances of a class
+  an instance method acts on instances individually
 
 * What is the difference between local variables, instance variables, and class variables?
 
+  local variables are not associated with any classes. They're only associated with their own scope of
+  what function their in.
 
+  instance variables are attached to instances of classes.
+  A Point class may have many instances of itself, each with their own X, Y instance variables
+  with many different values.
+
+  We could also create a class variable (num_points) which exists once per each class, no matter
+  how many instances of the class exist. Each instance of the class can read the same value
 
 * What is a range?
 
-
+  
 
 * In ruby, what does attr_accessor do?  
 
+  class Point
+    attr_accessor :x, :y
 
+    def initialize(x, y)
+      @x = x
+      @y = y
+    end
+  end
 
 * What is the purpose of environment files under the config folder in Rails? (development, test, production)
 
@@ -480,19 +540,57 @@ attributes for each model, a 1:M association, and a M:M association.
 
 * What is the purpose of `yield`?
 
+  We use the yield keyword when we create our layout template.
+  The rest of our site will fill in wherever we put the yield keyword.
 
+  You can also give names to the yield keyword to render different portions of
+  the site.
+
+  <body>
+
+  <%- yield :nav %>
+
+  <%- yield %>
+
+  <body>
+
+  ========================================
+
+  form_for @new_user do |u|
+    text_field u.usernme
+    password_field u.password
+  end
+
+  def form_for(obj)
+    puts "<form>"
+    yield
+    puts "</form>"
+  end
 
 * How do you store API keys when creating an app?
 
-
+  we put them in a .env file 
+  and don't share it!
+  add it to the .gitignore
 
 * How do I send parameters through a url?
 
-
+  
 
 * Explain MVC
 
+ MVC stands for Model View Controller
+ These are the three parts that make up all our front-end apps
 
+ the Model sets up our database structure
+ the Model is used to model/represent all the data in our application
+
+ The View defines how things are actually displayed
+
+ the Controller actually controls the flow of information back and
+ forth between the front end and the back end
+
+ The controller controls all interaction between the model and the view
 
 * What is a `before_action`? When would you use it?
 
@@ -500,15 +598,35 @@ attributes for each model, a 1:M association, and a M:M association.
 
 * What do controllers do in rails?
 
+  In Ruby on Rails we have views that define pages in our app
+  We have models that define how our data exists in the database and in the app
 
+  In Rails the controllers they allow us to configure routes
+  We can pair controllers with CRUD methods to control how our models are
+  Created, Read, Updated and Destroyed
 
-* What is RESTful routing?
+* What is ReSTful routing?
 
+  Representational
+  State
+  Transfer
 
+  Restful routing is a standard convention that serves as a guide
+  for us to create our CRUD routes
+
+  ReSTful routing relies on HTTP verbs (GET, PUT, POST, DELETE)
+  to attach more meaning to a single url
+
+  /people/tom
+  POST - creates a person Tom              Create
+  GET - gets info about the person Tom     Read
+  PUT - updates info about the person Tom  Update
+  DELETE - deletes the person Tom          Delete
 
 * What is a polymorphic association?
 
-
+  it's when you're dealing with one database table that want to use for many things
+  for example, we can create a table called votes that votes on comments, as well as posts
 
 * What are params?
 
@@ -520,26 +638,90 @@ attributes for each model, a 1:M association, and a M:M association.
 
 * What is CSRF? How does Rails protect an app against this?
 
-
+  Cross Site Request Forgery
+  Ruby on Rails puts CSRF tokens into forms and checks to make sure the token exists
+  whenever someone tries to submit data on a route that would update or give out information
 
 * What's the difference between `User.find_by_id(1)` and `User.find(1)`?
 
+  find_by_id(1) is guaranteed to return the user with id 1
+  find(1) returns one user, but there's no guarantee who the user may be
 
+  If you want to find a specific user you'll want to use find_by_id
+  If you're in development using the rails console it's nice to be able to get
+  any old one user quickly
+
+  If the id of the use doesn't matter then the database can return us
+  any old user much more faster quickly.
 
 * What's are classes in Ruby? What are modules? And what's the difference?
 
+  Modules are things like gems
 
+  A module is a self-contained piece of code that you're able to
+  export and import into other places.
 
+  We created modules when we first started learning Ruby
+  when we created the calculator and the guessing game.
+  
 
 ## Testing Questions
 
 * What are some advantages/disadvantages to testing your code?
 
+  Disadvantages:
+  - tedious
+  - writing tests is not fun
+  - you may fall into the trap of writing code that just passes tests,
+    and it may not actually have the correct functionality
+  - sometimes it's hard to write a test when the code you're trying to test
+    has many many dependencies and is tightly coupled to other parts of
+    the application.
+    - how can you test someone scrolling down through a site and
+      clicking a delete button in the middle of a long list?
+    - how do you make sure that alerts are properly displayed on
+      a page?
 
+  Advantages:
+  - you can be more sure that your application works
+  - if you have a good test suite then you can run it whenever
+    someone submits code, and they can know whether or not
+    they're breakig the entire application when they submit
+    new code
+  - writing tests first allow you to expirement with how
+    pieces of code will work in your application and
+    tests can actually provide a great library of code
+    providing examples of how things work
 
 * What tools would you use to test your code's functionality?
 
+    you can assign someone to manually test the site
+    manual testing is expensive and tedious but it's absolutely necessary
+    manual testing will expose certain problems with an application tha
+    wouldn't have been caught (or would't have been able to be caught) otherwise
 
+    in QA (quality assurance) testing testers create test plans to test different
+    portions of an app. Someone is given a very loose set of instructions to
+    follow.
+
+    Eventually manual tests may be converted into automated tests.
+
+    For example:
+    - typing something wierd into a form kills the form
+    - no one thought about that before
+    - now we can script a test to make sure it doesn't happen again
+
+    Unit tests: test small parts of code like calling a method and checking a return value with assert
+
+    There are also great tools that allow us to script user interactions like
+    - typing things into a form
+    - clicking on buttons
+    - navigating to pages
+
+    PhantomJs, Selenium, Angular has it's own built in libraries
+    the Mocha, Chai, Jasmine libraries all help write unit tests and assertions
+
+    there's also Rspec in ruby
 
 * What is the difference between a unit test and a functional/integration test?
 
@@ -547,11 +729,26 @@ attributes for each model, a 1:M association, and a M:M association.
 
 * What is the purpose of a code style linting tool?
 
+  A code linter is a program that checks given code for stylistic errors
+  a linter is a nice tool to use to enforce consistent coding patterns throughout
+  an application
 
+  A linter can detect all sorts of things:
+  - improper indentation
+  - inconsistent snake_case vs camelCase
+  - inconsistent single or double quote usage, ' vs "
+  - non-matching brackets, quotes, curly braces
+  - long lines. lines past 80 or 100 characters
+
+  teams can configure linters to detect any stylistic convention they care about.
+
+  code repositories can actually prevent code from being commited until they pass
+  a linter.
 
 * What is End-to-end (E2E) testing? How can it be implemented in frameworks like Angular and Rails?
 
-
+  End to end testing refers to testing things all the from the client end to the server end
+  Angular provides it's own end to end testing framework
 
 
 ## Coding Questions:
